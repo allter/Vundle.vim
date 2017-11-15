@@ -170,6 +170,8 @@ func! s:rtp_add_defaults()
   let default = &rtp
   let &rtp = current
   let default_rtp_items = split(default, ',')
+" don't add default .vim directory to runtimepath
+return
   if !empty(default_rtp_items)
     let first_item = fnameescape(default_rtp_items[0])
     exec 'set rtp-=' . first_item
